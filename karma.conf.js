@@ -11,6 +11,10 @@ module.exports = function (config) {
         flags: ["--no-sandbox"],
       },
     },
+    captureTimeout: 210000,
+    browserDisconnectTolerance: 3,
+    browserDisconnectTimeout: 210000,
+    browserNoActivityTimeout: 210000,
     plugins: [
       require("karma-jasmine"),
       require("karma-chrome-launcher"),
