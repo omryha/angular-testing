@@ -1,6 +1,7 @@
-export const environment = {
-  production: true
-};
+export interface Hero {
+  id: number;
+  name: string;
+}
 
 
 /*

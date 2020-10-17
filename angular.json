@@ -3,9 +3,13 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "ng-unit-test": {
+    "angular.io-example": {
       "projectType": "application",
-      "schematics": {},
+      "schematics": {
+        "@schematics/angular:application": {
+          "strict": true
+        }
+      },
       "root": "",
       "sourceRoot": "src",
       "prefix": "app",
@@ -13,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/ng-unit-test",
+            "outputPath": "dist",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -24,7 +28,8 @@
               "src/assets"
             ],
             "styles": [
-              "src/styles.css"
+              "src/styles.css",
+              "src/test.css"
             ],
             "scripts": []
           },
@@ -47,13 +52,13 @@
               "budgets": [
                 {
                   "type": "initial",
-                  "maximumWarning": "2mb",
-                  "maximumError": "5mb"
+                  "maximumWarning": "500kb",
+                  "maximumError": "1mb"
                 },
                 {
                   "type": "anyComponentStyle",
-                  "maximumWarning": "6kb",
-                  "maximumError": "10kb"
+                  "maximumWarning": "2kb",
+                  "maximumError": "4kb"
                 }
               ]
             }
@@ -62,18 +67,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "ng-unit-test:build"
+            "browserTarget": "angular.io-example:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "ng-unit-test:build:production"
+              "browserTarget": "angular.io-example:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "ng-unit-test:build"
+            "browserTarget": "angular.io-example:build"
           }
         },
         "test": {
@@ -110,15 +115,16 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "ng-unit-test:serve"
+            "devServerTarget": "angular.io-example:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "ng-unit-test:serve:production"
+              "devServerTarget": "angular.io-example:serve:production"
             }
           }
         }
       }
-    }},
-  "defaultProject": "ng-unit-test"
+    }
+  },
+  "defaultProject": "angular.io-example"
 }

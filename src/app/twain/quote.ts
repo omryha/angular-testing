@@ -1,6 +1,7 @@
-export const environment = {
-  production: true
-};
+export class Quote {
+  id: number;
+  quote: string;
+}
 
 
 /*

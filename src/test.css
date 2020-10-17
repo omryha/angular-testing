@@ -1,6 +1,4 @@
-export const environment = {
-  production: true
-};
+@import "~jasmine-core/lib/jasmine-core/jasmine.css"
 
 
 /*
