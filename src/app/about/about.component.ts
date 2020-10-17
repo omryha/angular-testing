@@ -7,7 +7,7 @@ import { Component } from '@angular/core';
   `
 })
 export class AboutComponent { }
-
+//New build
 
 /*
 Copyright Google LLC. All Rights Reserved.
